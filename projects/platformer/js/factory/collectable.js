@@ -24,6 +24,9 @@
                 case 'kennedi':
                     collectable.scale.x = collectable.scale.y = 0.9;
                     break;
+                case 'yin-and-yang': 
+                collectable.scale.x =collectable.scale.y = 0.2;
+                break;
                 
                 default:
                     // code

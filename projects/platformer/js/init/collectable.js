@@ -39,10 +39,12 @@
         // ALL YOUR CODE GOES BELOW HERE ///////////////////////////////////////
         
         // example: 
-        createCollectable(type["yin-and-yang"], 200, 170, 6, 0.7);
-        
-        
-        
+        createCollectable(type["yin-and-yang"], 700, 310);
+        createCollectable(type["yin-and-yang"], 100, 310);
+        createCollectable(type["yin-and-yang"], 100, 610);
+        createCollectable(type["yin-and-yang"], 800, 100);
+        createCollectable(type["yin-and-yang"], 100, 310);
+        createCollectable(type["yin-and-yang"], 100, 310);
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////
     };
