@@ -63,7 +63,7 @@ var init = function (window) {
 
         // TODO 9 : Iterate over the array
         for (var i = 0; i < 100; i++) {
-            game.checkCirclePosition(circles.length[i]);
+            game.checkCirclePosition(circles[i]);
             physikz.updatePosition(circles[i]);
         }
 
