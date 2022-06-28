@@ -14,7 +14,7 @@
 			font-size: 400%;
 			text-align: center;
 			font-family: fantasy;
-			color:bisque;
+			color:#e0d6ff;
 			display:ruby-text;
 			
 			
@@ -107,11 +107,16 @@
 			*/
 			function handleBoxClick() {
 				positionX = 0;
-				speed  += 3;
+				if (speed >= 0){
+					speed += 3;
+				}
+				else if(speed <= 0){
+					speed -= 3
+				}
 				// your code to increase the points variable by 1
-				changeBoxText(points);
 				points += 1;
-
+				changeBoxText(points);
+				
 
 			};
 		})();
