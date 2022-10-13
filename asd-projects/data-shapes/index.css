@@ -1,0 +1,50 @@
+#board {
+  width: 400px;
+  margin: auto;
+  border: rgb(162, 162, 162) ridge 4px;
+}
+
+#info-bar {
+  width: 400px;
+  height: 40px;
+  background: rgb(95, 59, 59);
+  font-size: 40px;
+  text-align: center;
+}
+
+#shape-container {
+  width: 400px;
+  height: 400px;
+  background: rgb(1, 1, 1);
+  border-top: silver ridge 4px;
+  border-bottom: silver ridge 4px;
+}
+
+#button-box {
+  width: 400px;
+  height: 40px;
+  background: rgb(99, 94, 94);
+}
+
+#shape {
+  color: rgb(109, 105, 177);
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 150px;
+  left: 150px;
+  border: rgb(46, 67, 224) solid 2px;
+  display: block;
+}
+
+button {
+  width: auto;
+  height: auto;
+  margin: auto;
+  margin-top: 10px;
+  margin-left: 9px;
+}
+
+p {
+  margin: 10px;
+}
