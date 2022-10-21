@@ -51,7 +51,7 @@ function render(element, image){
               .css('background-color', color)
     }
   }
-}
+}   
 
 // this function converts an RGB string into an array for easy manipulation
 function rgbStringToArray(rgbStr) {
