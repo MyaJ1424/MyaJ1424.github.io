@@ -21,7 +21,7 @@ function resetAndRender() {
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here 
   applyFilter();
-
+    
   // do not change the below line of code
   render($("#display"), image);
 }
@@ -32,7 +32,7 @@ function applyAndRender() {
 
 // TODO 1, 2 & 4: Create the applyFilter function here
 // creating a for loop in order to take the string and return it into an array
-function applyFilter(){
+function applyFilter(filterFunction){
   for (var i = 0; i < image.length; i++){
     var row = image[i];
     for(var k = 0; k < row.length; k++){
@@ -46,20 +46,30 @@ function applyFilter(){
 }
 
 // TODO 7: Create the applyFilterNoBackground function
+function applyFilterNoBackground(arr){
 
-
-// TODO 5: Create the keepInBounds function
-
-
-// TODO 3: Create reddify function
-//you are here and this will create a filter function fot the 
-function reddify(arr){
-  arr[
-    RED = 200
-  ];
 }
 
-// TODO 6: Create more filter functions
+// TODO 5: Create the keepInBounds function
+function keepInBounds(num){
+  var result1 = Math.max(num , 0);
+  var result2 = math.min(result1, 255);
+  return result2;
+}
 
+// TODO 3: Create reddify function
+function reddify(arr){
+  arr[RED] = 200;
+}
+// TODO 6: Create more filter functions
+function decreaseBlue(arr){
+  var result = arr[BLUE] - 50
+  arr[BLUE] = keepInBounds(result);
+}
+
+function increasesGreenByBlue(arr){
+  var result = arr[GREEN] + arr[BLUE]
+  arr[GREEN] = keepInBounds(result);
+}
 
 // CHALLENGE code goes below here
