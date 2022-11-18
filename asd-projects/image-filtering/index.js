@@ -47,9 +47,16 @@ function applyFilter(filterFunction){
 
 // TODO 7: Create the applyFilterNoBackground function
 function applyFilterNoBackground(arr){
-
+  for (var i = 0; i < image.length; i++){
+    var row = image[i];
+    for(var k = 0; k < row.length; k++){
+      var rgbString = row[k];  
+      var rbgNumbers = rgbStringToArray(rgbString);
+      rbgNumbers[RED] = 255;
+      rgbString = rgbArrayToString(rbgNumbers);
+      row[k] = rgbString;
 }
-
+///you are here(this was edited at school)
 // TODO 5: Create the keepInBounds function
 function keepInBounds(num){
   var result1 = Math.max(num , 0);
