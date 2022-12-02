@@ -27,7 +27,7 @@ function runProgram() {
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('keydown', handleKeydown);  
+  $(document).on('keydown', handleKeydown);
   $(document).on("keyup", handleKeyUp); // change 'eventType' to the type of event you want to handle
   console.log(handleKeydown);
   ////////////////////////////////////////////////////////////////////////////////
@@ -54,42 +54,42 @@ function runProgram() {
       speedX = -5;
     }
     else if (event.which === 39) {
-    console.log("right");
+      console.log("right");
       speedX = 5;
     }
     else if (event.which === 38) {
       console.log("up");
       speedY = -5;
     }
-     else if (event.which === 40) {
-     console.log("down");
+    else if (event.which === 40) {
+      console.log("down");
       speedY = 5;
-   }
-    else if (event.which === 13){
+    }
+    else if (event.which === 13) {
       console.log("enter");
       speedX = 0;
     }
   }
-  
-  function handleKeyUp(event){
-  if (event.which === 39){
-   console.log("right");
-   speedX = 0;
-  }
-  else if (event.which === 38){
-    console.log("up")
-    speedY = 0;
-  }
-  else if (event.which === 40){
-    console.log("down");
-    speedY = 0;
-  }
-  else if  (event.which === 37){
-    console.log("left");
-    speedX = 0;
-  }
-  
-  
+
+  function handleKeyUp(event) {
+    if (event.which === 39) {
+      console.log("right");
+      speedX = 0;
+    }
+    else if (event.which === 38) {
+      console.log("up")
+      speedY = 0;
+    }
+    else if (event.which === 40) {
+      console.log("down");
+      speedY = 0;
+    }
+    else if (event.which === 37) {
+      console.log("left");
+      speedX = 0;
+    }
+
+
 
   };
   ////////////////////////////////////////////////////////////////////////////////
