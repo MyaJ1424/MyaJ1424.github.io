@@ -24,8 +24,9 @@ function runProgram() {
 
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
-
+  // $(document).on('eventType', handleEvent);
+  $(document).on('keydown', handleKeyDown);
+  $('#errorContainer').text("down down");
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -35,8 +36,7 @@ function runProgram() {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    redrawGameItem()
-    repositionGameItem()
+  
 
   }
 
@@ -51,37 +51,37 @@ function runProgram() {
       S: 83,
     }
 
-    function handleKeyDown() {
+    function handleKeyDown(event) {
+      $('#errorContainer').text("down down");
       var keycode = event.which;
       console.log(keycode);
 
       if (event.which === 40) {
-        console.log("arrow down pressed!");
+        $('#errorContainer').text("down down");
       }
       else if (event.which === 38){
-        console.log("arrow up pressed?!");
+        $('#errorContainer').text("down down");
       }
       else if (event.which === 87){
-        console.log("key W pressed!");
+        $('#errorContainer').text("down down");
       }
       else if(event.which === 83){
-        console.log("key S pressed!");
-      }
+        $('#errorContainer').text("down down");
 
     }
 
-    function handleKeyUp(){
+    function handleKeyUp(event){
       if(event.which === 40){
-      console.log("arrow down mate");
+        $('#errorContainer').text("down down");
     }
     else if(event.which === 38){
-      console.log("arrow up mate");
+      $('#errorContainer').text("down down");
     }
     else if(event.which === 87){
-      console.log("key W mate");
+      $('#errorContainer').text("down down");
     }
     else if(event.which === 83){
-      console.log("key S mate");
+      $('#errorContainer').text("down down");
     }
   }
 
@@ -99,4 +99,5 @@ function runProgram() {
     $(document).off();
   }
   }
+}
 }
