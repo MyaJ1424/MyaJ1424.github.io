@@ -14,8 +14,7 @@ function runProgram() {
     "UP": 38,
     "DOWN": 40,
     "LEFT": 37,
-    "RIGHT": 38,
-    "ENTER": 13,
+    "RIGHT": 39
   };
   // Game Item Objects
   var speedY = 0;
@@ -49,42 +48,38 @@ function runProgram() {
   */
   function handleKeydown(event) {
     console.log("yo");
-    if (event.which === 37) {
+    if (event.which === "LEFT") {
       console.log("left");
       speedX = -5;
     }
-    else if (event.which === 39) {
+    else if (event.which === 'RIGHT') {
       console.log("right");
       speedX = 5;
     }
-    else if (event.which === 38) {
+    else if (event.which === 'UP') {
       console.log("up");
       speedY = -5;
     }
-    else if (event.which === 40) {
+    else if (event.which === 'DOWN') {
       console.log("down");
       speedY = 5;
-    }
-    else if (event.which === 13) {
-      console.log("enter");
-      speedX = 0;
     }
   }
 
   function handleKeyUp(event) {
-    if (event.which === 39) {
+    if (event.which === 'RIGHT') {
       console.log("right");
       speedX = 0;
     }
-    else if (event.which === 38) {
+    else if (event.which === 'UP') {
       console.log("up")
       speedY = 0;
     }
-    else if (event.which === 40) {
+    else if (event.which === 'DOWN') {
       console.log("down");
       speedY = 0;
     }
-    else if (event.which === 37) {
+    else if (event.which === 'LEFT') {
       console.log("left");
       speedX = 0;
     }
