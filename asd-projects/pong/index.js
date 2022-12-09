@@ -26,7 +26,10 @@ function runProgram() {
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   // $(document).on('eventType', handleEvent);
   $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);
   $('#errorContainer').text("down down");
+  console.log(handleKeyDown);
+  console.log(handleKeyUp)
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -52,39 +55,37 @@ function runProgram() {
     }
 
     function handleKeyDown(event) {
-      $('#errorContainer').text("down down");
-      var keycode = event.which;
-      console.log(keycode);
+      console.log(handleKeyDown);
 
-      if (event.which === 40) {
+      if (event.which === ARROWDOWN) {
         $('#errorContainer').text("down down");
       }
-      else if (event.which === 38){
+      else if (event.which === ARROWUP){
         $('#errorContainer').text("down down");
       }
-      else if (event.which === 87){
+      else if (event.which === KEYW){
         $('#errorContainer').text("down down");
       }
-      else if(event.which === 83){
+      else if(event.which === S){
         $('#errorContainer').text("down down");
 
     }
-
+handleKeyDown();
     function handleKeyUp(event){
-      if(event.which === 40){
+      if(event.which === ARROWDOWN){
         $('#errorContainer').text("down down");
     }
-    else if(event.which === 38){
+    else if(event.which === ARROWUP){
       $('#errorContainer').text("down down");
     }
-    else if(event.which === 87){
+    else if(event.which === KEYW){
       $('#errorContainer').text("down down");
     }
-    else if(event.which === 83){
+    else if(event.which === S){
       $('#errorContainer').text("down down");
     }
   }
-
+handleKeyUp();
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////

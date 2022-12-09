@@ -1,12 +1,12 @@
 body {
-  background-color: darkgreen;
+  background-color: rgb(0, 77, 100);
 }
 
 #board {
   width: 440px;
   height: 440px;
   border: 1px solid white;
-  background-color: black;
+  background-color: rgb(48, 88, 190);
   position: relative;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 #rightPaddle {
-  background-color: aqua;
+  background-color: rgb(241, 241, 241);
   width: 20px;
   height: 30px;
   top:100px;
