@@ -9,6 +9,7 @@ body {
   border: 1px solid rgb(210, 192, 192);
   background-color: black;
   position: relative;
+  
 }
 
 #walker {
@@ -19,4 +20,5 @@ body {
   border-radius: 50px;
   left: 100px;  /* Uncomment if you want to set a "starting" position */
   /* top: 100px;    /* Uncomment if you want to set a "starting" position */
+  
 }

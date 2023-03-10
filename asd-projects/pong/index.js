@@ -27,9 +27,8 @@ function runProgram() {
   // $(document).on('eventType', handleEvent);
   $(document).on('keydown', handleKeyDown);
   $(document).on('keyup', handleKeyUp);
-  $('#errorContainer').text("down down");
-  console.log(handleKeyDown);
-  console.log(handleKeyUp)
+  console.log(handleKeyUp);
+  console.log(handleKeyDown)
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -72,8 +71,9 @@ function runProgram() {
     }
 handleKeyDown();
     function handleKeyUp(event){
+      console.log(handleKeyUp);      
       if(event.which === ARROWDOWN){
-        $('#errorContainer').text("down down");
+      
     }
     else if(event.which === ARROWUP){
       $('#errorContainer').text("down down");
