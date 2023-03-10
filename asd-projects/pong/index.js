@@ -27,8 +27,8 @@ function runProgram() {
   // $(document).on('eventType', handleEvent);
   $(document).on('keydown', handleKeyDown);
   $(document).on('keyup', handleKeyUp);
-  console.log(handleKeyUp);
-  console.log(handleKeyDown)
+
+
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ function runProgram() {
   by calling this function and executing the code inside.
   */
   function newFrame() {
-  
+    
 
   }
 
@@ -47,45 +47,46 @@ function runProgram() {
   */
   function handleEvent(event) {
     var KEY = {
-      ARROWDOWN: 40,
-      ARROWUP: 38,
-      KEYW: 87,
-      S: 83,
+      "DOWN": 40,
+      "UP": 38,
+      "W": 87,
+      "S": 83,
     }
+  }
+  
+  function handleKeyDown(event) {
+    console.log(handleKeyDown);
 
-    function handleKeyDown(event) {
-      console.log(handleKeyDown);
-
-      if (event.which === ARROWDOWN) {
-        $('#errorContainer').text("down down");
-      }
-      else if (event.which === ARROWUP){
-        $('#errorContainer').text("down down");
-      }
-      else if (event.which === KEYW){
-        $('#errorContainer').text("down down");
-      }
-      else if(event.which === S){
-        $('#errorContainer').text("down down");
-
-    }
-handleKeyDown();
-    function handleKeyUp(event){
-      console.log(handleKeyUp);      
-      if(event.which === ARROWDOWN){
-      
-    }
-    else if(event.which === ARROWUP){
+    if (event.which === KEY.DOWN) {
       $('#errorContainer').text("down down");
     }
-    else if(event.which === KEYW){
+    else if (event.which === KEY.UP){
       $('#errorContainer').text("down down");
     }
-    else if(event.which === S){
+    else if (event.which === KEY.W){
+      $('#errorContainer').text("down down");
+    }
+    else if(event.which === KEY.S){
       $('#errorContainer').text("down down");
     }
   }
-handleKeyUp();
+
+  function handleKeyUp(event){
+    console.log(handleKeyUp);      
+    if(event.which === KEY.DOWN){
+    
+    }
+    else if(event.which === KEY.UP){
+      $('#errorContainer').text("down down");
+    }
+    else if(event.which === KEY.W){
+      $('#errorContainer').text("down down");
+    }
+    else if(event.which === KEY.S){
+      $('#errorContainer').text("down down");
+    }
+  }
+
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
@@ -94,11 +95,11 @@ handleKeyUp();
 
   function endGame() {
     // stop the interval timer
-    clearInterval(interval);
+      clearInterval(interval);
 
-    // turn off event handlers
-    $(document).off();
+      // turn off event handlers
+      $(document).off();
+    }
   }
-  }
-}
-}
+
+
