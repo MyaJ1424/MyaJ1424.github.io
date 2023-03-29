@@ -4,7 +4,7 @@ body {
 
 #gameBoard {
   width: 870px;
-  height: 740px;
+  height: 540px;
   border: 1px solid white;
   background-color: rgb(0, 0, 0);
   position: absolute;
