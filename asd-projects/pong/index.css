@@ -25,7 +25,7 @@ body {
   width: 30px;
   height: 200px;
   left: 4px;
-  bottom: -6px;
+  top: -6px;
   border-radius: 10px;
   position: relative;
 }
@@ -42,20 +42,20 @@ body {
 }
 
 #playerTwo{
-  width: 80px;
-  height:50px;
-  background-color: black;
+  width: 100px;
+  height: 60px;
+  background-color: whitesmoke;
   border-color: silver;
   border: 1px solid purple;
   right:-100px;
-  top:-470px;
+  top:-460px;
   position: relative;
 }
 
 #playerOne{
-  width: 80px;
-  height:50px;
-  background-color: black;
+  width: 100px;
+  height:60px;
+  background-color: whitesmoke;
   border-color: silver;
   border: 1px solid purple;
   left:700px;

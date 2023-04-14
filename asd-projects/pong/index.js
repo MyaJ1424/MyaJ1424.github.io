@@ -17,39 +17,25 @@ function runProgram() {
     "S": 83,
   }
 
-  const board_width = $("#board").width();
-  const board_height = $("#board").height();
-  // Game Item Objects
-  function wallCollision() {
-    if (ball.x >= board_width) {
-      ball.speedX = -ball.speedX
-    }
-    else if (ball.y >= board_height) {
-      ball.speedY = -ball.speedY
-    }
-    else if (ball.x >= board_width) {
-      ball.speedX = -ball.speedX
-    }
-    else if (ball.y >= board_height) {
-      ball.speedY = -ball.speedY
-    }
-  }
-
-
+  const board_width = $("#gameBoard").width();
+  const board_height = $("#gameBoard").height();
 
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  //startBall();
+startBall();
 
+  //EVENT LISTENER FUNCTIONS
   $(document).on('keydown', handleKeyDown);
   $(document).on('keyup', handleKeyUp);
 
 
+
+  //FACTORY FUNCTION = MAKES OBJECTS
   function gameItem(id) {
     var obj = {};
     obj.id = id;
-    obj.x = parseFloat($(id).css("top"));
-    obj.y = parseFloat($(id).css("left"));
+    obj.y = parseFloat($(id).css("top"));
+    obj.x = parseFloat($(id).css("left"));
     obj.width = $(id).width();
     obj.height = $(id).height();
     obj.speedX = 0;
@@ -57,8 +43,9 @@ function runProgram() {
     return obj;
   }
 
-  var $paddleLeft = gameItem("#leftPaddle");
+  //GAME OBJECT DECLARATION
   var $paddleRight = gameItem("#rightPaddle");
+  var $paddleLeft = gameItem("#leftPaddle");
   var $ball = gameItem("#ball");
 
   ////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +59,11 @@ function runProgram() {
   function newFrame() {
     moveObject($paddleRight);
     moveObject($paddleLeft);
-  }  
+    moveObject($ball);
+    wallCollision($paddleRight);
+    wallCollision($paddleLeft);
+    // wallCollision($ball);
+  }
 
 
 
@@ -83,38 +74,38 @@ function runProgram() {
 
   function handleKeyDown(event) {
     if (event.which === KEY.DOWN) {
-      $paddleLeft.speedX += 5;
+      $paddleLeft.speedY += 5;
       console.log("KEY DOWN")
     }
     else if (event.which === KEY.UP) {
-      $paddleLeft.speedX += -5;
+      $paddleLeft.speedY += -5;
       console.log("KEY UP")
     }
     else if (event.which === KEY.W) {
-      $paddleRight.speedX += -5;
+      $paddleRight.speedY += -5;
       console.log("KEY W")
     }
     else if (event.which === KEY.S) {
-      $paddleRight.speedX += 5;
+      $paddleRight.speedY += 5;
       console.log("KEY S")
     }
   }
 
   function handleKeyUp(event) {
     if (event.which === KEY.DOWN) {
-      $paddleLeft.speedX = 0;
+      $paddleLeft.speedY = 0;
       console.log("KEY DOWN")
     }
     else if (event.which === KEY.UP) {
-      $paddleLeft.speedX = 0;
+      $paddleLeft.speedY = 0;
       console.log("KEY UP")
     }
     else if (event.which === KEY.W) {
-      $paddleRight.speedX = 0;
+      $paddleRight.speedY = 0;
       console.log("KEY W")
     }
     else if (event.which === KEY.S) {
-      $paddleRight.speedX = 0;
+      $paddleRight.speedY = 0;
       console.log("KEY S")
     }
   }
@@ -124,16 +115,43 @@ function runProgram() {
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   //////////////////////////////////////////////////////////////////////////////// 
 
-  function moveObject(obj) {
-    obj.x += obj.speedX;
-    $(obj.id).css("top", obj.x)
-    obj.y += obj.speedY;
-    $(obj.id).css("left", obj.y)
+
+  // Game Item Objects
+  function wallCollision(obj) {
+    //console.log(obj.y, "obj y")
+
+    if (obj.y + obj.height < 0) {
+      obj.y = 0 - obj.height
+    }
+    if (obj.y + obj.height > board_height) {
+      obj.y = board_height - obj.height
+    }
+    if (obj.x + obj.width > board_width) {
+      obj.speedX = 0;
+    }
+
+    // if (obj.y < 0) {
+    //   obj.y = 0;
+    // }
+    // if (obj.y - obj.height > board_height){
+    //   obj.y = board_height - obj.height;
+    // }
   }
 
-  function startBall(ball) {
-      
+  function moveObject(obj) {
+    obj.x += obj.speedX;
+    $(obj.id).css("left", obj.x)
+    obj.y += obj.speedY;
+    $(obj.id).css("top", obj.y)
   }
+
+  function startBall(obj) {
+  $ball.x = Math.random() * 200 + 100;
+  $ball.y =  Math.random() * 200 + 100;
+  $ball.speedY = (10) *  Math.random() > .5 ? 1 : -1;
+  $ball.speedX = (10) *  Math.random() > .5 ? 1 : -1;
+  }
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
